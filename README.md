@@ -1,1 +1,1 @@
-# StrukturData-2015
+# StrukturData-2015.
