@@ -60,7 +60,7 @@ class Vector3D
   public double getZ(){
     return z;
     }
-
+  
     
      //untuk mengoveride object
     }
