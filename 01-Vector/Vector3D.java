@@ -7,17 +7,17 @@
  */
 class Vector3D
 {
-    // instance variables - replace the example below with your own
+     //instance variables - replace the example below with your own
    double x,y,z;
-        public double x(){
+        private double x(){
             
          return x  ;  
             
         }
-        public double y(){ 
+        private double y(){ 
             return y ;
         }
-        public double z(){
+        private double z(){
             
            return z;
         }
@@ -34,9 +34,34 @@ class Vector3D
      */
     public Vector3D (double x, double y,double z)
     {
-        // put your code here
+        //ut your code here
         this.x=x;
         this.y=y;
-        this.z=z;
+      this.z=z;
+    
     }
-}
+
+ 
+    
+  
+  //get / mendapatkan nilai panjang
+
+  //set nilai lebar
+  
+  //get /mendapatkan nilai lebar
+  public double getX(){
+    return x;
+    }
+  //get / mendapatkan nilai luas
+  public double getY(){
+    return y;
+    }
+  //get / mendapatkan nilai keliling
+  public double getZ(){
+    return z;
+    }
+
+    
+     //untuk mengoveride object
+    }
+
