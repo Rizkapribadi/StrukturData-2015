@@ -39,7 +39,7 @@ public class UjiKopiBerkas {
     
     @Test
     public void kopi() throws IOException {
-        byte[] pesan = "Aaallloooeee dddooonnnyyyaaa...".getBytes();
+        byte[] pesan = "ha".getBytes();
         
         // Buat berkas uji
         FileOutputStream sumber = new FileOutputStream(sumberStr);
