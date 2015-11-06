@@ -88,6 +88,15 @@ public class CaesarCipher{
 
         }
     }
-    
+     public static void main(String[] args)  {
+        try {
+            CaesarCipher baru = new CaesarCipher(3);
+            baru.enkripsi("ujisumber.txt","ujisasaran.txt");
+            baru.dekripsi("ujisumber.txt","uji.txt");
+        }
+        catch (IOException kesalahan) {
+            System.out.printf("Terjadi kesalahan: %s", kesalahan);
+        }
+    }
      
 }
