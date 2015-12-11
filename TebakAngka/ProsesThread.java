@@ -11,7 +11,6 @@ import java.io.BufferedWriter;
 public class ProsesThread implements Runnable{
     private String angka;
     private Socket koneksi;
-   
     public ProsesThread(Socket koneksiKiriman, int angka) {
         koneksi = koneksiKiriman;
         this.angka = ""+angka;
@@ -26,12 +25,10 @@ public class ProsesThread implements Runnable{
         }
     }
 
-    
     private void prosesPermintaanClient()
     throws IOException {
         String ip = koneksi.getInetAddress().getHostAddress();
         System.out.println("Dari: " + ip);
-        
         int i = 0;
         String pesanServer = null;
         OutputStream keluaran =null;
@@ -55,9 +52,8 @@ public class ProsesThread implements Runnable{
             if(pesanServer.equalsIgnoreCase("Benar"))
                 break;
         }
-        
         if(i==3){
-            pesanServer="Kalah, angka = "+angka;
+            pesanServer="  "+angka;
             keluaran = koneksi.getOutputStream();
             keluaranBuf = new BufferedWriter (new OutputStreamWriter(keluaran));
             keluaranBuf.write(pesanServer);

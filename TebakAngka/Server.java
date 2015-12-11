@@ -11,7 +11,6 @@ import java.io.BufferedWriter;
 import java.util.Scanner;
 public class Server {
     private int angka=32;
-    
     public Server()
     throws BindException, IOException {
         serverSocket = new ServerSocket(33333);
@@ -21,7 +20,6 @@ public class Server {
         System.out.println("Menunggu koneksi...");
         while (true) {
             Socket koneksi = null;
-            
             try {
                 koneksi = serverSocket.accept();
                 ProsesThread satuProcess = new ProsesThread(koneksi,angka);

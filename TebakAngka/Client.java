@@ -23,7 +23,6 @@ public class Client {
                 Scanner keyboard = new Scanner(System.in);
                 System.out.print("Silahkan Masukkan angka tebakan Anda : ");
                 baris = keyboard.nextLine();
-                
                 // Tulis ke socket
                 Writer keluaranWriter = new OutputStreamWriter(socket.getOutputStream());
                 BufferedWriter keluaranBuff = new BufferedWriter(keluaranWriter);
@@ -36,9 +35,8 @@ public class Client {
                 masukanBuff = new BufferedReader(masukan);
                 baris = masukanBuff.readLine();
                 System.out.println(baris);
-                if(baris.equalsIgnoreCase("Anda Benar"))
-                
-                break;
+                if(baris.equalsIgnoreCase("Benar"))
+                    break;
             }
             if(i==3)
                 masukan = new InputStreamReader(socket.getInputStream());
