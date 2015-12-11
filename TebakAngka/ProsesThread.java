@@ -9,8 +9,9 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.BufferedWriter;
 public class ProsesThread implements Runnable{
-    private Socket koneksi;
     private String angka;
+    private Socket koneksi;
+   
     public ProsesThread(Socket koneksiKiriman, int angka) {
         koneksi = koneksiKiriman;
         this.angka = ""+angka;
@@ -25,15 +26,17 @@ public class ProsesThread implements Runnable{
         }
     }
 
+    
     private void prosesPermintaanClient()
     throws IOException {
         String ip = koneksi.getInetAddress().getHostAddress();
         System.out.println("Dari: " + ip);
+        
         int i = 0;
         String pesanServer = null;
         OutputStream keluaran =null;
         BufferedWriter keluaranBuf = null;
-        for(; i<3; i++){
+        for(i=0; i<3; i++){
             // Ambil dan tampilkan masukan
             InputStream masukan = koneksi.getInputStream();
             BufferedReader masukanReader = new BufferedReader(new InputStreamReader(masukan));
@@ -52,6 +55,7 @@ public class ProsesThread implements Runnable{
             if(pesanServer.equalsIgnoreCase("Benar"))
                 break;
         }
+        
         if(i==3){
             pesanServer="Kalah, angka = "+angka;
             keluaran = koneksi.getOutputStream();

@@ -21,8 +21,9 @@ public class Client {
             {
                 // Ketik
                 Scanner keyboard = new Scanner(System.in);
-                System.out.print("Masukkan angka tebakan : ");
+                System.out.print("Silahkan Masukkan angka tebakan Anda : ");
                 baris = keyboard.nextLine();
+                
                 // Tulis ke socket
                 Writer keluaranWriter = new OutputStreamWriter(socket.getOutputStream());
                 BufferedWriter keluaranBuff = new BufferedWriter(keluaranWriter);
@@ -35,14 +36,15 @@ public class Client {
                 masukanBuff = new BufferedReader(masukan);
                 baris = masukanBuff.readLine();
                 System.out.println(baris);
-                if(baris.equalsIgnoreCase("Benar"))
-                    break;
+                if(baris.equalsIgnoreCase("Anda Benar"))
+                
+                break;
             }
             if(i==3)
                 masukan = new InputStreamReader(socket.getInputStream());
             masukanBuff = new BufferedReader(masukan);
             baris = masukanBuff.readLine();
-            System.out.println("Kalah, angka = "+baris);
+            System.out.println("Anda Kalah, angka = "+baris);
         }
         catch(IOException salah) {
             System.out.println(salah);
