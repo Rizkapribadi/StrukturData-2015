@@ -19,7 +19,6 @@ public class Client {
             Reader masukan = null;
             BufferedReader masukanBuff=null;
             String baris = null;
-    
             Scanner keyboard = new Scanner(System.in);
             System.out.print("Perintah: ");
             perintah = keyboard.nextLine();
@@ -31,15 +30,13 @@ public class Client {
                 keluaranBuff.write(perintah);
                 keluaranBuff.write("\n");
                 keluaranBuff.flush();
-                
-   
                 System.out.print("");
                 masukan = new InputStreamReader(socket.getInputStream()); 
                 masukanBuff = new BufferedReader(masukan);
                 baris = masukanBuff.readLine();
                 System.out.println(""+baris);
                 
-                
+      
             }else{
         
                 Writer keluaranWriter = new OutputStreamWriter(socket.getOutputStream()); 
@@ -51,6 +48,7 @@ public class Client {
                 masukanBuff = new BufferedReader(masukan);
                 baris = masukanBuff.readLine();
                 System.out.println(""+baris);
+                
             }
        
         }
