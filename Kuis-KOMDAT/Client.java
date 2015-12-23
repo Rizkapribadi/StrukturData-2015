@@ -27,7 +27,7 @@ public class Client {
             System.out.print("Perintah: ");
             perintah = keyboard.nextLine();
             
-            if(perintah.equalsIgnoreCase("SIAPA")||perintah.equalsIgnoreCase("WAKTU"))
+            if(perintah.equalsIgnoreCase("SIAPA"))
             {
                 // Tulis ke socket
                 Writer keluaranWriter = new OutputStreamWriter(socket.getOutputStream()); 
@@ -47,6 +47,35 @@ public class Client {
             else
             {
                 // Tulis ke socket
+                Writer keluaranWriter = new OutputStreamWriter(socket.getOutputStream()); 
+                BufferedWriter keluaranBuff = new BufferedWriter(keluaranWriter);
+                keluaranBuff.write(perintah);
+                keluaranBuff.write("\n");
+                keluaranBuff.flush();
+                
+                // Baca dari Server
+                System.out.print("\t");
+                masukan = new InputStreamReader(socket.getInputStream()); 
+                masukanBuff = new BufferedReader(masukan);
+                baris = masukanBuff.readLine();
+                System.out.println(""+baris);
+            }
+            if(perintah.equalsIgnoreCase("WAKTU"))
+            {
+                // Tulis ke socket
+                Writer keluaranWriter = new OutputStreamWriter(socket.getOutputStream()); 
+                BufferedWriter keluaranBuff = new BufferedWriter(keluaranWriter);
+                keluaranBuff.write(perintah);
+                keluaranBuff.write("\n");
+                keluaranBuff.flush();
+                
+                // Baca dari Server
+                System.out.print("\t");
+                masukan = new InputStreamReader(socket.getInputStream()); 
+                masukanBuff = new BufferedReader(masukan);
+                baris = masukanBuff.readLine();
+                System.out.println(""+baris);
+            }else{
                 Writer keluaranWriter = new OutputStreamWriter(socket.getOutputStream()); 
                 BufferedWriter keluaranBuff = new BufferedWriter(keluaranWriter);
                 keluaranBuff.write(perintah);
