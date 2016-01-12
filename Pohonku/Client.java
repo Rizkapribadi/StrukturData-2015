@@ -48,7 +48,7 @@ public class Client {
                 int klbb, uv, nit, suhu;
                 System.out.println("Masukkan Data Pohon");
                 
-                System.out.println("ID,SUHU(C),UV(nm),LEMBAB(%),NITRO(%)\n");
+                System.out.println("ID,SUHU(C),UV(nm),LEMBAB(%),NITRO(%)(semua tanpa spasi hanya koma)\n");
 
                 nama = keyboard.nextLine();
 
